@@ -31,7 +31,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
-        String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+        String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.KEY_NODE_PATH);
         String npmPath = nodePath.substring(0, nodePath.lastIndexOf(File.separator) + 1);
         if (OSUtils.isWindows()) {
             cmdLine.add(npmPath + Constants.NPM_CMD);

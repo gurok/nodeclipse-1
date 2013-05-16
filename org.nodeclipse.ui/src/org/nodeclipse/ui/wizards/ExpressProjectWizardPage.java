@@ -107,7 +107,7 @@ public class ExpressProjectWizardPage extends WizardPage {
     }
 
     private boolean isExpressInstalled() {
-        String path = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.EXPRESS_PATH);
+        String path = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.KEY_EXPRESS_PATH);
         if (path == null || path.equals("")) {
             return false;
         }

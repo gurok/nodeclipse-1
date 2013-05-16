@@ -18,7 +18,7 @@ import org.nodeclipse.ui.preferences.PreferenceConstants;
 public class ProcessUtils {
 	public static String getNodePath() {
 		return Activator.getDefault().getPreferenceStore()
-				.getString(PreferenceConstants.NODE_PATH);
+				.getString(PreferenceConstants.KEY_NODE_PATH);
 	}
 
 	public static String getNodeFolder() {
@@ -28,7 +28,7 @@ public class ProcessUtils {
 
 	public static String getNpmPath() {
 		String nodePath = Activator.getDefault().getPreferenceStore()
-				.getString(PreferenceConstants.NODE_PATH);
+				.getString(PreferenceConstants.KEY_NODE_PATH);
 		String npmPath = nodePath.substring(0,
 				nodePath.lastIndexOf(File.separator) + 1);
 		if (OSUtils.isWindows()) {
@@ -40,17 +40,17 @@ public class ProcessUtils {
 
 	public static String getExpressPath() {
 		return Activator.getDefault().getPreferenceStore()
-				.getString(PreferenceConstants.EXPRESS_PATH);
+				.getString(PreferenceConstants.KEY_EXPRESS_PATH);
 	}
 
 	public static String getExpressVersion() {
 		return Activator.getDefault().getPreferenceStore()
-				.getString(PreferenceConstants.EXPRESS_VERSION);
+				.getString(PreferenceConstants.KEY_EXPRESS_VERSION);
 	}
 	
 	public static String getCompletionsJsonPath() {
 		return Activator.getDefault().getPreferenceStore()
-				.getString(PreferenceConstants.COMPLETIONS_JSON_PATH);
+				.getString(PreferenceConstants.KEY_COMPLETIONS_JSON_PATH);
 	}
 	
 

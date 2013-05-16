@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.preference.PreferenceConverter;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.OSUtils;
@@ -53,14 +54,21 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		}
 		file = new File(path);
 		if (file.exists()) {
-			store.setDefault(PreferenceConstants.NODE_PATH, path);
+			store.setDefault(PreferenceConstants.KEY_NODE_PATH, path);
 		}
 		file = new File(express_path);
 		if (file.exists()) {
-			store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
-			store.setDefault(PreferenceConstants.EXPRESS_VERSION,
+			store.setDefault(PreferenceConstants.KEY_EXPRESS_PATH, express_path);
+			store.setDefault(PreferenceConstants.KEY_EXPRESS_VERSION,
 					getExpressVersion(express_path));
 		}
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_COMMENT, PreferenceConstants.DEFAULT_COLOR_COMMENT);
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_DOC, PreferenceConstants.DEFAULT_COLOR_DOC);
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_KEYWORD, PreferenceConstants.DEFAULT_COLOR_KEYWORD);
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_STRING, PreferenceConstants.DEFAULT_COLOR_STRING);
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_NUMBER, PreferenceConstants.DEFAULT_COLOR_NUMBER);
+        PreferenceConverter.setDefault(store, PreferenceConstants.KEY_COLOR_NORMAL, PreferenceConstants.DEFAULT_COLOR_NORMAL);
+        store.setDefault(PreferenceConstants.KEY_BOLD_KEYWORD, true);
 	}
 
 	private String getExpressVersion(String express) {

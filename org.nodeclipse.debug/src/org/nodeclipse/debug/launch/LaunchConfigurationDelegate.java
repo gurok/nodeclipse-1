@@ -50,7 +50,7 @@ public class LaunchConfigurationDelegate implements
 		
 		// Using configuration to build command line
 		
-		String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+		String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.KEY_NODE_PATH);
 		
 		// Check if the node location is correctly configured
 		File nodeFile = new File(nodePath);
